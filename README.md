@@ -1,6 +1,6 @@
 # OCMA
 
-OCMA solve very large matrices using disk-based out-of-core technology and Intel Math Kernel Library (Intel MKL), and it adopts the technology of memory-mapped file I/O.
+OCMA solves very large matrices using disk-based out-of-core technology and Intel Math Kernel Library (Intel MKL), and it adopts the technology of memory-mapped file I/O.
 
 Installation
 After downloading, the users will see two files: ocma-0.1.zip is for Windows system ocma-0.1.tar.gzis for Linux/Unix system.
