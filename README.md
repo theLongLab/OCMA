@@ -68,6 +68,7 @@ For all file names, the file path must be specified if the file in question is n
 
 ### Contacts
 Zhi Xiong, zxiong at stu dot edu dot cn
+
 Quan Long, quan dot long at ucalgary dot ca
 
 ### Copyright License (MIT Open Source)
