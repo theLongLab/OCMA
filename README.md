@@ -18,7 +18,7 @@ When C compiler and MKL are available in the system, one can enter the src folde
 ```
 > ocma eigen disk/memory n A E Q
 ```
-Parameter explanation: 
+Parameters: 
 * disk/memory: Specifies whether using disk or memory. 
 * n (input): The row number and column number of matrix A.
 * A (input): The filename of the file that stores matrix A. The size of the file should be n*n*sizeof(float).
@@ -29,50 +29,50 @@ Parameter explanation:
 ```
 > ocma singular disk/memory m n A S U V
 ```
-Parameter explanation: 
-disk/memory: Specifies whether using disk or memory. 
-m (input): The row number of matrix A.
-n (input): The column number of matrix A.
-A (input): The filename of the file that stores matrix A. The size of the file should be m*n*sizeof(float).
-S (output): The filename of the file that stores the singular values of matrix A. The size of the file is min(m,n)*sizeof(float).
-U (output): The filename of the file that stores the left-singular vectors of matrix A. The size of the file is m*min(m,n)*sizeof(float).
-V (output): The filename of the file that stores the right-singular vectors of matrix A. The size of the file is n*min(m,n)*sizeof(float).
+Parameters: 
+* disk/memory: Specifies whether using disk or memory. 
+* m (input): The row number of matrix A.
+* n (input): The column number of matrix A.
+* A (input): The filename of the file that stores matrix A. The size of the file should be m*n*sizeof(float).
+* S (output): The filename of the file that stores the singular values of matrix A. The size of the file is min(m,n)*sizeof(float).
+* U (output): The filename of the file that stores the left-singular vectors of matrix A. The size of the file is m*min(m,n)*sizeof(float).
+* V (output): The filename of the file that stores the right-singular vectors of matrix A. The size of the file is n*min(m,n)*sizeof(float).
 
 **Part Singular Value Decomposition**
 ```
 > ocma singularpart disk/memory m n k A S U V
 ```
-Parameter explanation: 
-disk/memory: Specifies whether using disk or memory. 
-m (input): The row number of matrix A.
-n (input): The column number of matrix A.
-k (input): The number of singular values. k <= min(m,n) is required. 
-A (input): The filename of the file that stores matrix A. The size of the file should be m*n*sizeof(float).
-S (output): The filename of the file that stores the singular values of matrix A. The size of the file is k*sizeof(float).
-U (output): The filename of the file that stores the left-singular vectors of matrix A. The size of the file is m*k*sizeof(float).
-V (output): The filename of the file that stores the right-singular vectors of matrix A. The size of the file is n*k*sizeof(float).
+Parameters: 
+* disk/memory: Specifies whether using disk or memory. 
+* m (input): The row number of matrix A.
+* n (input): The column number of matrix A.
+* k (input): The number of singular values. k <= min(m,n) is required. 
+* A (input): The filename of the file that stores matrix A. The size of the file should be m*n*sizeof(float).
+* S (output): The filename of the file that stores the singular values of matrix A. The size of the file is k*sizeof(float).
+* U (output): The filename of the file that stores the left-singular vectors of matrix A. The size of the file is m*k*sizeof(float).
+* V (output): The filename of the file that stores the right-singular vectors of matrix A. The size of the file is n*k*sizeof(float).
 
 **Matrix Format Conversion**
 ```
 > ocma format txt2bin/bin2txt m n A B
 ```
-Parameter explanation: 
-txt2bin/bin2txt: Specifies to convert text to binary format or in reverse. 
-m (input): The row number of matrix A.
-n (input): The column number of matrix A.
-A (input): The filename of the file that stores matrix A in text/binary format.
-B (output): The filename of the file that stores the matrix in binary/text format.
+Parameters: 
+* txt2bin/bin2txt: Specifies to convert text to binary format or in reverse. 
+* m (input): The row number of matrix A.
+* n (input): The column number of matrix A.
+* A (input): The filename of the file that stores matrix A in text/binary format.
+* B (output): The filename of the file that stores the matrix in binary/text format.
 
 Note: 
 For all file names, the file path must be specified if the file in question is not present in the current working directory.
 
 ### Contacts
-Zhi Xiong, zxiong at stu dot edu dot cn
-
-Quan Long, quan dot long at ucalgary dot ca
+* Zhi Xiong, zxiong at stu dot edu dot cn
+* Quan Long, quan dot long at ucalgary dot ca
 
 ### Copyright License (MIT Open Source)
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
