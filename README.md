@@ -19,11 +19,11 @@ When C compiler and MKL are available in the system, one can enter the src folde
 > ocma eigen disk/memory n A E Q
 ```
 Parameter explanation: 
-disk/memory: Specifies whether using disk or memory. 
-n (input): The row number and column number of matrix A.
-A (input): The filename of the file that stores matrix A. The size of the file should be n*n*sizeof(float).
-E (output): The filename of the file that stores the eigenvalues of matrix A. The file size is n*sizeof(float).
-Q (output): The filename of the file that stores the eigenvectors of matrix A. The file size is n*n*sizeof(float).
+*disk/memory: Specifies whether using disk or memory. 
+*n (input): The row number and column number of matrix A.
+*A (input): The filename of the file that stores matrix A. The size of the file should be n*n*sizeof(float).
+*E (output): The filename of the file that stores the eigenvalues of matrix A. The file size is n*sizeof(float).
+*Q (output): The filename of the file that stores the eigenvectors of matrix A. The file size is n*n*sizeof(float).
 
 **Singular Value Decomposition**
 ```
