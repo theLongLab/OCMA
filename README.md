@@ -7,18 +7,30 @@ OCMA factorizes very large matrices using disk-based out-of-core technology and 
 
 ### Installation
 
-After downloading, the users will see two files: ocma-0.1.zip is for Windows system ocma-0.1.tar.gzis for Linux/Unix system.
-After decompression, one will see two folders: src and bin. The folder src contains all the source code, and the folder bin contains the compiled binary executable. Under the folder bin, two small matrices, SM10 and M3_4 for testing purpose are also provided. 
+After downloading, the users will see two files: ocma-0.1.zip for Windows system, and ocma-0.1.tar.gz for Linux/Unix system.
+After decompression, one will see two folders: src and bin. The folder src contains all the source code, and the folder bin contains the compiled binary executable. Under the folder bin, two small matrices, SM10 and M3_4 for testing purpose are also provided. M3_4 is a 3 x 4 matrix and SM10 is a 10 x 10 symmetric matrix. The suffix _Single, _Double and _Text indicate the format of single precision, double precision, and text file, respectively.
 The program is written in the C language, and it uses Intel Math Kernel Library. So, in order to compile the source code, one needs to install C compiler, e.g., the Intel C/C++ Compilers, the GNU C Compiler or Visual Studio C Compiler. Additionally, one needs to install Intel MKL.
 When C compiler and MKL are available in the system, one can enter the src folder and modify the makefile based on the C compiler and the MKL paths; then type make or nmake to compile. After that, the ocma executable will be generated in the bin folder. 
+
+Compiling options
+We have provided two options for compiling the executable. 
+```
+> make (or nmake) static
+```
+will generate an executable that doesn’t rely on the Intel MKL libraries. However, it still relies on libiomp5.so (Linux) or libiomp5md.dll (Windows) for multi-threading OpenMP settings. We have provided a version for Windows 7 and a version for CentOS 7.3 in the release.  
+```
+> make (or nmake) dynamic 
+```
+will generate a smaller executable that doesn’t contain the Intel MKL libraries. As such, the executable will be dynamically linked to the libraries during the course. 
 
 ### Usage
 
 **Eigen-decomposition for Symmetric Matrices** 
 ```
-> ocma eigen disk/memory n A E Q
+> ocma eigen single/double disk/memory n A E Q
 ```
 Parameters: 
+* single/double: Specifies whether using single or double precision
 * disk/memory: Specifies whether using disk or memory. 
 * n (input): The row number and column number of matrix A.
 * A (input): The filename of the file that stores matrix A. The size of the file should be n*n*sizeof(float).
@@ -27,9 +39,10 @@ Parameters:
 
 **Singular Value Decomposition**
 ```
-> ocma singular disk/memory m n A S U V
+> ocma singular single/double disk/memory m n A S U V
 ```
 Parameters: 
+* single/double: Specifies whether using single or double precision
 * disk/memory: Specifies whether using disk or memory. 
 * m (input): The row number of matrix A.
 * n (input): The column number of matrix A.
@@ -40,9 +53,10 @@ Parameters:
 
 **Part Singular Value Decomposition**
 ```
-> ocma singularpart disk/memory m n k A S U V
+> ocma singularpart single/double disk/memory m n k A S U V
 ```
 Parameters: 
+* single/double: Specifies whether using single or double precision
 * disk/memory: Specifies whether using disk or memory. 
 * m (input): The row number of matrix A.
 * n (input): The column number of matrix A.
